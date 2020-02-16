@@ -1,0 +1,93 @@
+::ng-deep .blue-centered-snack {
+  background-color: blue;
+  color: white;
+}
+
+::ng-deep .mat-simple-snackbar {
+  justify-content: center !important;
+}
+
+mat-spinner {
+  position: absolute;
+  left: 50%;
+  margin: -44px;
+  top: 52vh;
+}
+
+button {
+  display: inline;
+}
+
+.loginscreen {
+  position: absolute;
+  width: 300px;
+  justify-content: center;
+  height: 355px;
+  border-radius: 15px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+}
+
+mat-grid-list {
+  top: -101px;
+}
+
+.logpass {
+  position: absolute;
+  top: 87px;
+  left: 24px;
+}
+
+.header {
+  color: #000000;
+  font-family: "Roboto", serif;
+  font-weight: bolder;
+  position: relative;
+  font-size: 30px;
+  left: 0;
+  top: -77px;
+  background-color: #6685d5;
+  text-align: right;
+  padding: 22px;
+  user-select: none;
+}
+
+.material-icons {
+  font-size: 60px;
+}
+
+.logicon {
+  position: relative;
+  z-index: 1;
+  top: 27px;
+  left: 25px;
+  user-select: none;
+}
+
+.mat-icon.mat-primary {
+  color: #000000;
+}
+
+.mat-form-field-infix {
+  display: block;
+  position: relative;
+  flex: auto;
+  min-width: 0;
+  width: 249px;
+}
+
+.signup {
+  background-color: green;
+}
+
+.button-group {
+  position: relative;
+  top: 92px;
+  display: flex;
+  padding: 10px;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-around;
+}

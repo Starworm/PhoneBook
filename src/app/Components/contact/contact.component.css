@@ -1,0 +1,19 @@
+mat-form-field {
+  display: block;
+  padding: 1vh 2vw;
+}
+.buttons {
+  position: inherit;
+  padding-left: 20px;
+  padding-bottom: 17px;
+}
+
+.cross {
+  position: absolute;
+  right: 35px;
+  top: 20px;
+  font-size: 21px;
+  color: #9d9d9d;
+  cursor: pointer;
+  z-index: 1;
+}

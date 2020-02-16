@@ -1,0 +1,110 @@
+::ng-deep .blue-centered-snack {
+  background-color: #5f54ff;
+  color: white;
+  text-align: justify;
+}
+
+.top {
+  position: sticky;
+  background-color: white;
+  top: -2px;
+  padding-top: 24px;
+  z-index: 1;
+}
+
+.bottom {
+  position: sticky;
+  bottom: 0;
+  background-color: white;
+}
+
+.table {
+  background-color: #b2bdbb;
+  z-index: 2;
+  max-height: 74vh;
+}
+
+.mat-elevation-z8 {
+  max-height: 74vh;
+}
+
+.header {
+  font-size: 16px;
+  font-weight: bold;
+  color: #000;
+}
+
+.accordeon {
+  box-sizing: border-box;
+  overflow: hidden;
+  min-height: 0;
+  border: none;
+  border-radius: 0 0 15px 15px;
+  background-color: #b7b7b7;
+  height: auto;
+}
+
+.expanded {
+  height: auto
+}
+
+mat-spinner {
+  position: absolute;
+  left: 50%;
+  margin: -44px;
+  top: 52vh;
+}
+
+.logout {
+  position: absolute;
+  right: 12px;
+  top: 35px;
+}
+
+.mat-form-field {
+  left: 4%;
+}
+
+.id {
+  font-size: 15px;
+  font-style: italic;
+}
+
+.id_data {
+  font-size: 17px;
+  font-style: initial;
+}
+
+.lastName_data {
+  font-size: 16px;
+  font-weight: bold;
+}
+mat-table {
+  background-color: #7d7d7d;
+}
+
+.phone {
+  position: relative;
+  /*z-index: 1;*/
+  top: 7px;
+  left: -4px;
+  user-select: none;
+}
+
+.userId {
+  flex: 0 0 100px;
+}
+
+.mat-column-mark {
+  flex: 0 0 10%;
+}
+
+mat-header-row {
+  position: sticky;
+  top: 85px;
+  opacity: 100;
+}
+
+.filter {
+  width: 108px;
+}

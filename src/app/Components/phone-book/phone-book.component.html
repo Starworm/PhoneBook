@@ -1,0 +1,103 @@
+<div class="top">
+  <button mat-raised-button color="primary" (click)="refresh()" style="left: 6px">Refresh</button>
+
+  <mat-form-field class="filter">
+    <input matInput (input)="applyFilter($event.target.value)" placeholder="Filter">
+  </mat-form-field>
+
+  <button mat-raised-button mat-elevation-z8 color="accent" class="logout" (click)="logout()">Logout</button>
+</div>
+
+<div class="mat-elevation-z8">
+  <mat-table
+    [dataSource]="dataSource"
+    matSort
+    multiTemplateDataRows>
+
+    <ng-container matColumnDef="expand">
+      <mat-cell *matCellDef="let obj" [attr.colspan]="displayedColumns.length">
+        <div>
+          <p class="id">Id:
+            <span class="id_data">{{obj.id}}</span>
+          </p>
+          <p>Last name: <span class="lastName_data">{{obj.lastName}}</span></p>
+          <p>Name: <span class="lastName_data">{{obj.name}}</span></p>
+          <p><span><mat-icon
+            class="material-icons md-36 phone"
+            color="primary">phone</mat-icon></span>Phone: <span class="lastName_data">{{obj.phone}}</span></p>
+          <p><span><mat-icon
+            class="material-icons md-36 phone"
+            color="primary">home</mat-icon></span>Address: {{obj.address}}</p>
+          <p><span><mat-icon
+            class="material-icons md-36 phone"
+            color="primary">email</mat-icon></span>e-mail: <span class="lastName_data">{{obj.email}}</span></p>
+          <p>Description: {{obj.description}}</p>
+        </div>
+      </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="lastName">
+      <mat-header-cell *matHeaderCellDef mat-sort-header class="header">Family name</mat-header-cell>
+      <mat-cell *matCellDef="let obj" class="lastName_data">{{obj.lastName}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="name">
+      <mat-header-cell *matHeaderCellDef mat-sort-header class="header">Private Name</mat-header-cell>
+      <mat-cell *matCellDef="let obj">{{obj.name}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="phone">
+      <mat-header-cell *matHeaderCellDef class="header">Phone number</mat-header-cell>
+      <mat-cell *matCellDef="let obj">{{obj.phone}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="mark">
+      <mat-header-cell *matHeaderCellDef>
+        <mat-checkbox color="warn"
+                      (change)="markAll()">
+
+        </mat-checkbox>
+      </mat-header-cell>
+      <mat-cell *matCellDef="let obj">
+        <mat-checkbox color="primary"
+                      [checked]="isMarked(obj.id)"
+                      (change)="checkBoxListener(obj.id)"
+                      (click)="stopProp($event)"
+        ></mat-checkbox>
+      </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns" class="table"></mat-header-row>
+    <mat-row style="cursor: pointer"
+             class="tableData"
+             [appHighlight]="'red'"
+             *matRowDef="let row; columns: displayedColumns;"
+             (click)="expandedRow = row == expandedRow ? null : row"></mat-row>
+    <mat-row *matRowDef="let row; columns: ['expand']"
+             [@fullInfo]="row == expandedRow ? 'open' : 'closed'" class="accordeon"></mat-row>
+
+  </mat-table>
+
+  <div class="bottom">
+    <button mat-raised-button color="primary"
+            [disabled]="markedContactsIds.length > 0"
+            (click)="addContact()">Add
+    </button>
+    <button mat-raised-button color="primary"
+            [disabled]="markedContactsIds.length != 1"
+            (click)="correctContact()">Correct
+    </button>
+    <button mat-raised-button color="warn"
+            [disabled]="markedContactsIds.length == 0"
+            (click)="removeContacts()">Remove
+    </button>
+
+    <mat-paginator style="background: #FFFFFF;" #paginator [pageSize]="6"
+                   [pageSizeOptions]="[6,9,15]"
+                   [showFirstLastButtons]="true">
+
+    </mat-paginator>
+  </div>
+</div>
+
+<mat-spinner *ngIf="spinnerShow"></mat-spinner>

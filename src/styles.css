@@ -1,1 +1,10 @@
-/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+::ng-deep .blue-centered-snack {
+  background-color: blue;
+  color: white;
+}
+
+::ng-deep .mat-simple-snackbar {
+  justify-content: center !important;
+}

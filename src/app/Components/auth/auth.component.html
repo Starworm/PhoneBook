@@ -1,0 +1,54 @@
+<div class="mat-elevation-z8 loginscreen">
+  <div>
+    <span><mat-icon
+      class="material-icons md-48 logicon"
+      color="primary">contact_phone</mat-icon></span>
+    <p class="header">Phonebook</p>
+  </div>
+  <form [formGroup]="authFG">
+    <div class="logpass">
+      <mat-form-field class="mat-form-field-infix { width: 248px;}">
+        <mat-label>Login</mat-label>
+        <input matInput
+               required
+               [formControl]="loginFC"
+               [errorStateMatcher]="matcher"
+        />
+        <mat-hint>more than 5 characters</mat-hint>
+        <mat-error *ngIf="loginFC.invalid">login too short</mat-error>
+      </mat-form-field>
+      <mat-form-field class="mat-form-field-infix { width: 248px;}">
+        <mat-label>Password</mat-label>
+        <input matInput
+               required
+               [formControl]="passwordFC"
+               [errorStateMatcher]="matcher"
+        />
+        <mat-hint>digits only</mat-hint>
+        <mat-error *ngIf="passwordFC.invalid">incorrect password</mat-error>
+      </mat-form-field>
+    </div>
+<!--    <mat-grid-list [cols]="buttonCols" rowHeight="50px" class="button-group">-->
+      <div class="button-group">
+        <div>
+          <button mat-raised-button color="primary"
+                  (click)="sendAuthInfo('signIn')">Sign in
+          </button>
+        </div>
+        <div>
+          <button mat-raised-button color="accent"
+                  class="signup"
+                  (click)="sendAuthInfo('signUp')">Sign up
+          </button>
+        </div>
+        <div>
+          <button mat-raised-button color="warn"
+                  type="reset">Reset
+          </button>
+        </div>
+      </div>
+<!--    </mat-grid-list>-->
+  </form>
+</div>
+
+<mat-spinner *ngIf="spinnerShow"></mat-spinner>
