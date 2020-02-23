@@ -1,4 +1,5 @@
 Shopping list is an application for creating recipes and add ingredients from recipe list to shopping list. login: 123@qwe.com password: 123456
+Project is available at this address http://phonebook-6883f.firebaseapp.com/
 
 To run application:
 
